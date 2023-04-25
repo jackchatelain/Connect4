@@ -53,6 +53,9 @@ O jogo pode ser inicializado de algumas formas via `src/connect4.py` ou `src/con
 * `python connect4_ai_versus_ai.py random 0 minmax 5`: o primeiro argumento define o primeiro jogador. Se for `random` então o segundo argumento pode ser qualquer valor. O terceiro argumento define o segundo jogador. Se o jogador for `minmax` então o argumento subsequente sempre precisa ser a profundidade adotada pelo `minmax`. 
 
 
+## Compilar os slides
+
+Para visualizar os arquivos que estão na pasta slides ou gerar `pdf` a partir deles basta utilizar qualquer plugin para Markdown no VSCode. 
 
 
 
