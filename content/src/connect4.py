@@ -11,6 +11,8 @@ YELLOW = (255,255,0)
 ROW_COUNT = 6
 COLUMN_COUNT = 7
 
+hide_board = 1
+
 def create_board():
 	board = np.zeros((ROW_COUNT,COLUMN_COUNT))
 	return board
@@ -54,9 +56,14 @@ def winning_move(board, piece):
 			if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
 				return True
 
+
+def check_tie(board):
 	# Check if board is full (tied)
 	if not 0 in board:
 		print("GAME IS A TIE")
+		label = myfont.render("Tie!", 1, YELLOW)
+		screen.blit(label, (40,10))
+		game_over = True
 		return True
 
 def draw_board(board):
@@ -124,7 +131,7 @@ while not game_over:
 					drop_piece(board, row, col, 1)
 
 					if winning_move(board, 1):
-						label = myfont.render("Player 1 wins!!", 1, RED)
+						label = myfont.render("Player 1 wins!", 1, RED)
 						screen.blit(label, (40,10))
 						game_over = True
 
@@ -139,11 +146,13 @@ while not game_over:
 					drop_piece(board, row, col, 2)
 
 					if winning_move(board, 2):
-						label = myfont.render("Player 2 wins!!", 1, YELLOW)
+						label = myfont.render("Player 2 wins!", 1, YELLOW)
 						screen.blit(label, (40,10))
 						game_over = True
 
-			print_board(board)
+			check_tie(board)
+			if not hide_board:
+				print_board(board)
 			draw_board(board)
 
 			turn += 1
