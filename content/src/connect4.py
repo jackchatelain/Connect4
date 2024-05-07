@@ -11,7 +11,7 @@ YELLOW = (255,255,0)
 ROW_COUNT = 6
 COLUMN_COUNT = 7
 
-hide_board = 1
+hide_board = 0
 
 def create_board():
 	board = np.zeros((ROW_COUNT,COLUMN_COUNT))
@@ -154,7 +154,7 @@ while not game_over:
 						game_over = True
 
 			check_tie(board)
-			if not hide_board:
+			if hide_board:
 				print_board(board)
 			draw_board(board)
 
