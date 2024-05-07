@@ -55,7 +55,7 @@ def winning_move(board, piece):
 				return True
 
 	# Check if board is full (tied)
-	if not "0" in board:
+	if not 0 in board:
 		print("GAME IS A TIE")
 		return True
 
