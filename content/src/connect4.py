@@ -154,7 +154,7 @@ while not game_over:
 						game_over = True
 
 			check_tie(board)
-			if hide_board:
+			if not hide_board:
 				print_board(board)
 			draw_board(board)
 
