@@ -1,21 +1,23 @@
 # Connect4-Python
 
-Este projeto é composto por dois componentes principais: 
+(The original readme was translated to English with DeepL)
 
-* src: que possui a implementação do jogo e dos agentes (robôs)
-* content: que possui todo o material didático sobre o assunto. 
+This project consists of two main components:
 
-Toda a implementação foi feita em Python. Este projeto é um fork do projeto do Keith Galli. Algumas modificações foram feitas na implementação, principalmente para permitir o jogo de robô contra robô. 
+* src: which contains the implementation of the game and the agents (robots)
+* content: which contains all the teaching material on the subject.
 
-Toda a parte referente ao material didático é nova. 
+The entire implementation was done in Python. This project is a fork of Keith Galli's project. Some modifications have been made to the implementation, mainly to allow robot-on-robot play.
 
-A licença deste projeto é MIT License, como pode ser visto no arquivo [LICENSE](LICENSE) no repositório. Ou seja, você pode usar todo o material para o objetivo que quiser. No entanto, é necessário citar os autores deste projeto. 
+All the teaching material is new.
 
-Fabrício Barth é professor Tempo Integral no [Insper Instituto de Ensino e Pesquisa](https://www.insper.edu.br/). 
+The license for this project is MIT License, as can be seen in the [LICENSE](LICENSE) file in the repository. In other words, you can use all the material for any purpose you like. However, it is necessary to cite the authors of this project.
+
+Fabrício Barth is a full-time professor at [Insper Instituto de Ensino e Pesquisa](https://www.insper.edu.br/).
 
 ## Setup
 
-Para o setup do projeto eu recomendo criar um ambiente virtual: 
+To set up the project, I recommend creating a virtual environment:
 
 ````bash
 python3.9 -m virtualenv venv
@@ -24,38 +26,38 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ````
 
-## Executando o servidor mkdocs na máquina local
+## Running the mkdocs server on the local machine
 
-Para executar o servidor da documentação em uma máquina local basta digitar:
+To run the documentation server on a local machine just type:
 
 ````bash
 cd content
 mkdocs serve
 ````
 
-## Fazendo o deploy da documentação usando o github actions
+## Deploying documentation using github actions
 
-Existe um arquivo `main.yml` no diretório `.github/workflows` que define o deploy da documentação no gh-pages do github usando actions. 
+There is a `main.yml` file in the `.github/workflows` directory that defines the deployment of documentation on github's gh-pages using actions.
 
-## Exemplos de execução do jogo Liga4 ou Connect4
+## Examples of running the Liga4 or Connect4 game
 
-O jogo pode ser inicializado de algumas formas via `src/connect4.py` ou `src/connect4_with_ai.py`: 
+The game can be initialized in a few ways via `src/connect4.py` or `src/connect4_with_ai.py`:
 
-* `src/connect4.py`: dois jogadores jogando de forma manual.
-* `src/connect4_with_ai.py`: um jogador manual e outro artificial.
-* `python connect4_with_ai.py random`: o jogador artificial tem comportamento aleatório.
-* `python connect4_with_ai.py minmax 5`: o jogador artificial implementa o algoritmo min-max. O número informado é a profundidade que o algoritmo min-max irá considerar - precisa ser um valor maior ou igual a 1.
+* `src/connect4.py`: two players playing manually.
+* `src/connect4_with_ai.py`: one manual player and one artificial player.
+* `python connect4_with_ai.py random`: the artificial player behaves randomly.
+* `python connect4_with_ai.py minmax 5`: the artificial player implements the min-max algorithm. The number entered is the depth that the min-max algorithm will consider - it must be a value greater than or equal to 1.
 
-* `python connect4_with_ai.py flat`: equivale a execução do minmax com profundidade 1. É utilizado para mostrar o comportamento de um agente que avalia apenas o primeiro nível da árvore.
+* `python connect4_with_ai.py flat`: is equivalent to running minmax at depth 1. It is used to show the behavior of an agent that only evaluates the first level of the tree.
 
-* `python connect4_with_ai.py complete`: equivale a execução do minmax com profundidade 20. É utilizado para mostrar o comportamento de um agente que avalia toda a árvore de busca. 
+* `python connect4_with_ai.py complete`: is equivalent to running minmax at depth 20. It is used to show the behavior of an agent that evaluates the entire search tree.
 
-* `python connect4_ai_versus_ai.py random 0 minmax 5`: o primeiro argumento define o primeiro jogador. Se for `random` então o segundo argumento pode ser qualquer valor. O terceiro argumento define o segundo jogador. Se o jogador for `minmax` então o argumento subsequente sempre precisa ser a profundidade adotada pelo `minmax`. 
+* `python connect4_ai_versus_ai.py random 0 minmax 5`: the first argument defines the first player. If it is `random` then the second argument can be any value. The third argument defines the second player. If the player is `minmax` then the subsequent argument must always be the depth adopted by `minmax`.
 
 
-## Compilar os slides
+## Compile the slides
 
-Para visualizar os arquivos que estão na pasta slides ou gerar `pdf` a partir deles basta utilizar qualquer plugin para Markdown no VSCode. 
+To view the files in the slides folder or generate `pdf` from them, just use any Markdown plugin in VSCode.
 
 
 
