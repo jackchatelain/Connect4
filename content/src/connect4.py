@@ -21,7 +21,10 @@ def drop_piece(board, row, col, piece):
 	board[row][col] = piece
 
 def is_valid_location(board, col):
-	return board[ROW_COUNT-1][col] == 0
+	if board[ROW_COUNT-1][col] == 0:
+		return True
+	else:
+		return False
 
 def get_next_open_row(board, col):
 	for r in range(ROW_COUNT):
@@ -97,7 +100,7 @@ size = (width, height)
 
 RADIUS = int(SQUARESIZE/2 - 5)
 
-screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode(size, pygame.HWSURFACE | pygame.DOUBLEBUF)
 draw_board(board)
 pygame.display.update()
 
