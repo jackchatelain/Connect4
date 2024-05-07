@@ -21,10 +21,14 @@ def drop_piece(board, row, col, piece):
 	board[row][col] = piece
 
 def is_valid_location(board, col):
-	if board[ROW_COUNT-1][col] == 0:
-		return True
-	else:
-		return False
+    combined_board = []
+    for i in range(COLUMN_COUNT):
+        combined_board.append(board[ROW_COUNT-1][i])
+    if board[ROW_COUNT-1][col] == 0 and 0 in combined_board:
+        return True
+    else:
+        return False
+	#return board[0][col] == 0
 
 def get_next_open_row(board, col):
 	for r in range(ROW_COUNT):
