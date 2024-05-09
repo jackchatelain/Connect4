@@ -1,6 +1,8 @@
+A fork of Connect 4 by [fbarth](https://github.com/fbarth), which is a fork of Connect 4 by [Keith Galli](https://github.com/KeithGalli)
+
 # Connect4-Python
 
-(The original readme was translated to English with DeepL)
+(The original readme is below, which has been translated to English with DeepL)
 
 This project consists of two main components:
 
