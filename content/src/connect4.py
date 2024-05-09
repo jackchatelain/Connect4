@@ -21,14 +21,14 @@ def drop_piece(board, row, col, piece):
 	board[row][col] = piece
 
 def is_valid_location(board, col):
-    combined_board = []
-    for i in range(COLUMN_COUNT):
-        combined_board.append(board[ROW_COUNT-1][i])
-    if board[ROW_COUNT-1][col] == 0 and 0 in combined_board:
-        return True
-    else:
-        return False
-	#return board[0][col] == 0
+    #combined_board = []
+    #for i in range(COLUMN_COUNT):
+    #    combined_board.append(board[ROW_COUNT-1][i])
+    #if board[ROW_COUNT-1][col] == 0 and 0 in combined_board:
+    #    return True
+    #else:
+    #    return False
+	return board[5][col] == 0
 
 def get_next_open_row(board, col):
 	for r in range(ROW_COUNT):
@@ -133,7 +133,8 @@ while not game_over:
 				posx = event.pos[0]
 				col = int(math.floor(posx/SQUARESIZE))
 
-				if is_valid_location(board, col):
+				was_valid = is_valid_location(board, col)
+				if was_valid:
 					row = get_next_open_row(board, col)
 					drop_piece(board, row, col, 1)
 
@@ -148,7 +149,8 @@ while not game_over:
 				posx = event.pos[0]
 				col = int(math.floor(posx/SQUARESIZE))
 
-				if is_valid_location(board, col):
+				was_valid = is_valid_location(board, col)
+				if was_valid:
 					row = get_next_open_row(board, col)
 					drop_piece(board, row, col, 2)
 
@@ -162,8 +164,11 @@ while not game_over:
 				print_board(board)
 			draw_board(board)
 
-			turn += 1
-			turn = turn % 2
+			if was_valid:
+				turn += 1
+				turn = turn % 2
+			else:
+				print("Invalid move was rejected")
 
 			if game_over:
 				pygame.time.wait(3000)
