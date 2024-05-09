@@ -1,5 +1,10 @@
 A fork of Connect 4 by [fbarth](https://github.com/fbarth), which is a fork of Connect 4 by [Keith Galli](https://github.com/KeithGalli)
 
+Features I added:
+- Show if game is a tie
+- Do nothing if the user tries to put a piece in a column that's full
+- Vsync for Windows and Linux (untested because I'm on MacOS)
+
 # Connect4-Python
 
 (The original readme is below, which has been translated to English with DeepL)
